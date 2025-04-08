@@ -37,7 +37,7 @@ if prompt := st.chat_input("What is up?"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
     data_for_post = {"role": "user", "content": prompt}
-    r = requests.post(webhook_url_post,json.dumps(data),headers = {'Content-Type':'application/json'})
+    r = requests.post(webhook_url_post,json.dumps(data_for_post),headers = {'Content-Type':'application/json'})
 
     # Display user message in chat message container
     with st.chat_message("user"):
