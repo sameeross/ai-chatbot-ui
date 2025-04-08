@@ -4,7 +4,7 @@ import time
 import requests
 import json
 
-webhook_url_post = "https://sameerarora.app.n8n.cloud/webhook-test/989cb120-9ab9-425b-8a48-99c351bba433"
+webhook_url_post = "https://webhook.site/3f535f72-c30a-41f1-af62-80b9cb69b929"
 
 
 # Streamed response emulator
