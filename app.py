@@ -1,6 +1,10 @@
 import streamlit as st
 import random
 import time
+import requests
+import json
+
+webhook_url_post = "https://sameerarora.app.n8n.cloud/webhook-test/989cb120-9ab9-425b-8a48-99c351bba433"
 
 
 # Streamed response emulator
@@ -17,7 +21,7 @@ def response_generator():
         time.sleep(0.05)
 
 
-st.title("ai chatbot")
+st.title("Ai chatbot")
 
 # Initialize chat history
 if "messages" not in st.session_state:
@@ -32,6 +36,9 @@ for message in st.session_state.messages:
 if prompt := st.chat_input("What is up?"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
+    data_for_post = {"role": "user", "content": prompt}
+    r = requests.post(webhook_url_post,json.dumps(data),headers = {'Content-Type':'application/json'})
+
     # Display user message in chat message container
     with st.chat_message("user"):
         st.markdown(prompt)
