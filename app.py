@@ -13,9 +13,9 @@ webhook_url_post = "https://sameerarora.app.n8n.cloud/webhook-test/989cb120-9ab9
 def response_generator():
     response = random.choice(
         [
-            "Hello there! How can I assist you today?" + server_address,
-            "Hi, human! Is there anything I can help you with?" + server_address,
-            "Do you need help?" + server_address,
+            "Hello there! How can I assist you today?" ,
+            "Hi, human! Is there anything I can help you with?"  ,
+            "Do you need help?" ,
         ]
     )
     for word in response.split():
